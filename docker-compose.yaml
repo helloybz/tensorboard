@@ -1,0 +1,18 @@
+version: "3"
+services:
+  tb:
+    image: tensorflow/tensorflow:latest
+    ports:
+      - "6006:6006"
+    volumes:
+      - type: bind
+        source: ~/logdir
+        target: /logdir
+    command:
+      [
+        "tensorboard",
+        "--logdir",
+        "/logdir",
+        "--host",
+        "0.0.0.0"
+      ]
