@@ -6,7 +6,7 @@ services:
       - "6006:6006"
     volumes:
       - type: bind
-        source: ~/logdir
+        source: ${TB_LOGDIR}
         target: /logdir
     command:
       [
